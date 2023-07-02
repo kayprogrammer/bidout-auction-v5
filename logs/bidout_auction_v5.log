@@ -1,0 +1,2 @@
+2023-07-02 23:15:58,327 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-02 23:16:02,328 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
