@@ -1,7 +1,5 @@
-from ninja.errors import ValidationError, AuthenticationError
 from ninja.responses import Response
 from http import HTTPStatus
-from apps.api import api
 
 
 class RequestError(Exception):
@@ -15,14 +13,9 @@ class RequestError(Exception):
         super().__init__()
 
 
-from pydantic import ValidationError
-
-
-@api.exception_handler(ValidationError)
-def validation_errors(request, exc):
-    print(exc)
+def validation_errors(exc):
     # Get the original 'detail' list of errors
-    details = exc.extra
+    details = exc.errors
     modified_details = {}
     for error in details:
         try:
@@ -36,6 +29,16 @@ def validation_errors(request, exc):
         {"status": "failure", "message": "Invalid Entry", "data": modified_details},
         status=422,
     )
+
+
+def request_errors(exc):
+    err_dict = {
+        "status": "failure",
+        "message": exc.err_msg,
+    }
+    if exc.data:
+        err_dict["data"] = exc.data
+    return Response(err_dict, status=exc.status_code)
 
 
 # def custom_exception_handler(exc, context):

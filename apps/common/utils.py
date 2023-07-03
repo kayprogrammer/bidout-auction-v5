@@ -1,5 +1,5 @@
 from django.utils import timezone
-from rest_framework.permissions import BasePermission
+from ninja.security import HttpBearer, APIKeyHeader
 from apps.accounts.auth import Authentication
 from apps.accounts.models import User, Jwt
 from apps.listings.models import Category, Listing
@@ -10,42 +10,25 @@ from datetime import timedelta
 from uuid import UUID
 
 
-class IsAuthenticatedCustom(BasePermission):
-    def has_permission(self, request, view):
-        http_auth = request.META.get("HTTP_AUTHORIZATION")
-        if not http_auth:
+class AuthUser(HttpBearer):
+    async def authenticate(self, request, token):
+        if not token:
             raise RequestError(err_msg="Auth Bearer not provided!", status_code=401)
-        user = Authentication.decodeAuthorization(http_auth)
+
+        user = await Authentication.decodeAuthorization(token)
         if not user:
             raise RequestError(
                 err_msg="Auth Token is Invalid or Expired!", status_code=401
             )
-        request.user = user
-        if request.user and request.user.is_authenticated:
-            return True
-        return False
+        return user
 
 
-class IsGuestOrAuthenticatedCustom(BasePermission):
-    def has_permission(self, request, view):
-        http_auth = request.META.get("HTTP_AUTHORIZATION")
-        guest_id = request.headers.get("Guestuserid")
-        if http_auth:
-            user = Authentication.decodeAuthorization(http_auth)
-            if not user:
-                raise RequestError(
-                    err_msg="Auth Token is Invalid or Expired!", status_code=401
-                )
-            request.user = user
-        elif guest_id:
-            guest = GuestUser.objects.filter(id=guest_id)
-            if guest.exists():
-                request.user = guest.get()
-            else:
-                request.user = None
-        else:
-            request.user = None
-        return True
+class GuestClient(APIKeyHeader):
+    param_name = "GuestUserId"
+
+    async def authenticate(self, request, key):
+        guest = await GuestUser.objects.get_or_none(id=is_uuid(key))
+        return guest
 
 
 def is_uuid(value):

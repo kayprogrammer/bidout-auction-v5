@@ -40,7 +40,7 @@ class Authentication:
         return decoded
 
     async def decodeAuthorization(token: str):
-        decoded = Authentication.decode_jwt(token[7:])
+        decoded = Authentication.decode_jwt(token)
         if not decoded:
             return None
         jwt_obj = await Jwt.objects.select_related("user", "user__avatar").get_or_none(
