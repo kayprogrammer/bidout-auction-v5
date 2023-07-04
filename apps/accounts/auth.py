@@ -40,6 +40,7 @@ class Authentication:
         return decoded
 
     async def decodeAuthorization(token: str):
+        print(token)
         decoded = Authentication.decode_jwt(token)
         if not decoded:
             return None

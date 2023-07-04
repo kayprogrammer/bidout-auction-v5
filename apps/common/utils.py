@@ -84,11 +84,13 @@ class TestUtil:
         user.save()
         return user
 
-    def auth_token(verified_user):
+    def jwt_obj(verified_user):
         access = Authentication.create_access_token({"user_id": str(verified_user.id)})
         refresh = Authentication.create_refresh_token()
-        Jwt.objects.create(user_id=verified_user.id, access=access, refresh=refresh)
-        return access
+        jwt = Jwt.objects.create(
+            user_id=verified_user.id, access=access, refresh=refresh
+        )
+        return jwt
 
     def create_listing(verified_user):
         # Create Category

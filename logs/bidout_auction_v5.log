@@ -633,3 +633,308 @@ RuntimeError: You cannot use AsyncToSync in the same thread as an async event lo
 2023-07-04 10:33:12,972 django.request WARNING  Bad Request: /api/v5/general/subscribe/
 2023-07-04 10:33:58,108 django.request WARNING  Bad Request: /api/v5/general/subscribe/
 2023-07-04 10:38:50,242 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-04 10:51:49,710 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 10:51:50,434 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 10:51:50,796 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:03:00,258 django       ERROR    You cannot call this from an async context - use a thread or sync_to_async.
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 292, in _run_authentication
+    result = callback(request)
+             ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/security/apikey.py", line 22, in __call__
+    return self.authenticate(request, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/utils.py", line 30, in authenticate
+    guest = GuestUser.objects.filter(id=is_uuid(key)).first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+2023-07-04 11:03:00,288 django.request ERROR    Internal Server Error: /api/v5/auth/login/
+2023-07-04 11:03:50,703 django       ERROR    You cannot call this from an async context - use a thread or sync_to_async.
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 292, in _run_authentication
+    result = callback(request)
+             ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/security/apikey.py", line 22, in __call__
+    return self.authenticate(request, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/utils.py", line 30, in authenticate
+    guest = GuestUser.objects.filter(id=is_uuid(key)).first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+2023-07-04 11:03:50,710 django.request ERROR    Internal Server Error: /api/v5/auth/login/
+2023-07-04 11:04:35,624 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:04:52,379 django       ERROR    You cannot call this from an async context - use a thread or sync_to_async.
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 292, in _run_authentication
+    result = callback(request)
+             ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/security/apikey.py", line 22, in __call__
+    return self.authenticate(request, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/utils.py", line 30, in authenticate
+    guest = GuestUser.objects.filter(id=is_uuid(key)).first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+2023-07-04 11:04:52,388 django.request ERROR    Internal Server Error: /api/v5/auth/login/
+2023-07-04 11:06:51,555 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:06:52,308 django.request ERROR    Internal Server Error: /api/v5/auth/login/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 390, in _async_view
+    return await cast(AsyncOperation, operation).run(request, *a, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 259, in run
+    error = await self._run_checks(request)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 274, in _run_checks
+    error = await self._run_authentication(request)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 294, in _run_authentication
+    return self.api.on_exception(request, exc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/main.py", line 471, in on_exception
+    return handler(request, exc)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/errors.py", line 104, in _default_exception
+    raise exc  # let django deal with it
+    ^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 292, in _run_authentication
+    result = callback(request)
+             ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/security/apikey.py", line 22, in __call__
+    return self.authenticate(request, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/utils.py", line 30, in authenticate
+    guest = GuestUser.objects.filter(id=is_uuid(key)).first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+2023-07-04 11:07:47,043 django       ERROR    You cannot call this from an async context - use a thread or sync_to_async.
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 292, in _run_authentication
+    result = callback(request)
+             ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/security/apikey.py", line 22, in __call__
+    return self.authenticate(request, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/utils.py", line 30, in authenticate
+    guest = GuestUser.objects.get(id=is_uuid(key))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+2023-07-04 11:07:47,074 django.request ERROR    Internal Server Error: /api/v5/auth/login/
+2023-07-04 11:08:00,572 django       ERROR    You cannot call this from an async context - use a thread or sync_to_async.
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 292, in _run_authentication
+    result = callback(request)
+             ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/security/apikey.py", line 22, in __call__
+    return self.authenticate(request, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/utils.py", line 30, in authenticate
+    guest = GuestUser.objects.filter(id=is_uuid(key)).first()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1057, in first
+    for obj in queryset[:1]:
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/utils/asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+2023-07-04 11:08:00,581 django.request ERROR    Internal Server Error: /api/v5/auth/login/
+2023-07-04 11:08:26,109 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:11:20,836 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:11:21,598 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:11:21,955 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:11:57,392 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:12:42,147 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:13:42,541 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:13:43,768 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:16:24,258 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:16:24,976 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:16:25,333 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:17:31,076 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:18:00,296 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:18:01,239 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:18:19,181 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:18:20,198 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:18:47,414 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:18:48,163 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:19:22,571 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:19:23,307 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:19:46,688 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:19:47,411 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:20:24,462 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:21:23,560 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:21:24,555 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-04 11:21:25,731 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:22:09,386 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:22:58,812 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:22:59,208 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:23:00,999 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:23:01,763 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-04 11:23:02,488 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:23:55,165 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:23:55,610 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:23:56,955 django.request ERROR    Internal Server Error: /api/v5/auth/refresh/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/asgiref/sync.py", line 209, in __call__
+    raise RuntimeError(
+RuntimeError: You cannot use AsyncToSync in the same thread as an async event loop - just await the async function directly.
+2023-07-04 11:24:35,586 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:24:35,942 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:24:37,083 django.request WARNING  Not Found: /api/v5/auth/refresh/
+2023-07-04 11:24:37,088 django.request WARNING  Unauthorized: /api/v5/auth/refresh/
+2023-07-04 11:24:38,240 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:24:39,256 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-04 11:24:40,046 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:25:26,970 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:25:27,909 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:25:28,289 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:25:29,372 django.request WARNING  Not Found: /api/v5/auth/refresh/
+2023-07-04 11:25:29,377 django.request WARNING  Unauthorized: /api/v5/auth/refresh/
+2023-07-04 11:25:30,966 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:25:31,834 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-04 11:25:32,738 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:26:17,047 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:26:17,794 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:26:18,246 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:26:19,506 django.request WARNING  Not Found: /api/v5/auth/refresh/
+2023-07-04 11:26:19,510 django.request WARNING  Unauthorized: /api/v5/auth/refresh/
+2023-07-04 11:26:20,616 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:26:21,349 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-04 11:26:22,072 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-04 11:26:22,079 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-04 11:26:23,386 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 11:27:16,954 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:27:17,690 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:27:18,046 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:35:22,320 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:38:17,893 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:38:50,409 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:39:41,795 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:40:08,158 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:43:32,884 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:45:12,858 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:46:18,714 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:47:25,146 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:47:25,865 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:47:26,336 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:47:27,587 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:53:15,102 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:53:15,947 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:53:16,381 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:53:17,492 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:53:18,218 django.request WARNING  Not Found: /api/v5/auth/refresh/
+2023-07-04 11:55:39,276 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-04 11:55:40,170 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:55:40,727 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-04 11:55:41,900 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-04 11:55:43,027 django.request WARNING  Not Found: /api/v5/auth/refresh/
+2023-07-04 11:55:43,034 django.request WARNING  Unauthorized: /api/v5/auth/refresh/
+2023-07-04 11:55:44,213 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-04 11:55:45,012 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-04 11:55:45,729 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-04 11:55:45,736 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-04 11:55:46,926 django.request WARNING  Not Found: /api/v5/auth/verify-email/
