@@ -6,6 +6,7 @@ from apps.common.exceptions import RequestError, request_errors, validation_erro
 from apps.general.views import general_router
 from apps.accounts.views import auth_router
 from apps.listings.views import listings_router
+from apps.auctioneer.views import auctioneer_router
 
 api = NinjaAPI(
     title=settings.SITE_NAME,
@@ -17,6 +18,7 @@ api = NinjaAPI(
 api.add_router("/api/v5/general/", general_router)
 api.add_router("/api/v5/auth/", auth_router)
 api.add_router("/api/v5/listings/", listings_router)
+api.add_router("/api/v5/auctioneer/", auctioneer_router)
 
 
 @api.exception_handler(ValidationError)

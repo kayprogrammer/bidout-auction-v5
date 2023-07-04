@@ -1656,3 +1656,107 @@ response -> data -> 5 -> watchlist
 2023-07-04 22:24:06,390 django.request WARNING  Not Found: /api/v5/listings/categories/invalid_category_slug/
 2023-07-04 22:24:07,632 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
 2023-07-04 22:24:08,707 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_slug/
+2023-07-05 00:21:40,623 django.request WARNING  Unauthorized: /api/v5/auctioneer/
+2023-07-05 00:21:59,030 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-05 00:22:55,871 django       ERROR    name 'CustomResponse' is not defined
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/auctioneer/views.py", line 52, in update_profile
+    return CustomResponse.success(message="User updated!", data=user)
+           ^^^^^^^^^^^^^^
+NameError: name 'CustomResponse' is not defined
+2023-07-05 00:22:55,897 django.request ERROR    Internal Server Error: /api/v5/auctioneer/
+2023-07-05 00:23:27,585 django       ERROR    3 validation errors for NinjaResponseSchema
+response -> first_name
+  field required (type=value_error.missing)
+response -> last_name
+  field required (type=value_error.missing)
+response -> avatar_id
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 3 validation errors for NinjaResponseSchema
+response -> first_name
+  field required (type=value_error.missing)
+response -> last_name
+  field required (type=value_error.missing)
+response -> avatar_id
+  field required (type=value_error.missing)
+2023-07-05 00:23:27,590 django.request ERROR    Internal Server Error: /api/v5/auctioneer/
+2023-07-05 00:24:36,186 django       ERROR    1 validation error for NinjaResponseSchema
+response -> data -> avatar
+  'File' object is not subscriptable (type=type_error)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 1 validation error for NinjaResponseSchema
+response -> data -> avatar
+  'File' object is not subscriptable (type=type_error)
+2023-07-05 00:24:36,190 django.request ERROR    Internal Server Error: /api/v5/auctioneer/
+2023-07-05 00:26:47,436 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 00:27:00,591 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 00:27:18,873 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 00:35:35,666 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/product-nam/
+2023-07-05 00:38:14,742 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 00:41:13,243 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/product-nam/
+2023-07-05 00:41:31,107 django.request WARNING  Bad Request: /api/v5/auctioneer/listings/product-nam/
+2023-07-05 00:41:39,696 django.request WARNING  Not Found: /api/v5/auctioneer/listings/product-nam/
+2023-07-05 00:41:53,079 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/product-name/
+2023-07-05 00:43:13,834 django       ERROR    1 validation error for NinjaResponseSchema
+response -> data -> bids
+  value is not a valid list (type=type_error.list)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 1 validation error for NinjaResponseSchema
+response -> data -> bids
+  value is not a valid list (type=type_error.list)
+2023-07-05 00:43:13,840 django.request ERROR    Internal Server Error: /api/v5/auctioneer/listings/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-05 00:43:51,836 django       ERROR    1 validation error for NinjaResponseSchema
+response -> data -> bids
+  value is not a valid list (type=type_error.list)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 1 validation error for NinjaResponseSchema
+response -> data -> bids
+  value is not a valid list (type=type_error.list)
+2023-07-05 00:43:51,860 django.request ERROR    Internal Server Error: /api/v5/auctioneer/listings/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-05 00:45:47,176 django.request WARNING  Not Found: /sd
+2023-07-05 00:45:47,361 django.request WARNING  Not Found: /favicon.ico
+2023-07-05 00:45:57,622 django.request WARNING  Not Found: /api/v5/dfgh
