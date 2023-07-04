@@ -1133,3 +1133,314 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^
 NameError: name 'CustomResponse' is not defined
 2023-07-04 15:03:45,231 django.request ERROR    Internal Server Error: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/
+2023-07-04 15:27:19,589 django       ERROR    'ASGIRequest' object has no attribute 'auth'
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 83, in retrieve_watchlist
+    client = await request.auth
+                   ^^^^^^^^^^^^
+AttributeError: 'ASGIRequest' object has no attribute 'auth'
+2023-07-04 15:27:19,672 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:28:44,597 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-04 15:29:27,071 django       ERROR    unhashable type: 'dict'
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 179, in _result_to_response
+    if status in self.response_models:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2023-07-04 15:29:27,074 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:31:19,229 django       ERROR    Response.__init__() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 146, in post
+    return Response({
+           ^^^^^^^^^^
+TypeError: Response.__init__() takes 2 positional arguments but 3 were given
+2023-07-04 15:31:19,234 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:36:59,244 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-04 15:37:24,386 django       ERROR    'Listing' object is not a mapping
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 102, in retrieve_watchlist
+    data = [{"watchlist": True, **watchlist.listing} for watchlist in watchlists]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 102, in <listcomp>
+    data = [{"watchlist": True, **watchlist.listing} for watchlist in watchlists]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Listing' object is not a mapping
+2023-07-04 15:37:24,390 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:37:49,791 django       ERROR    'Listing' object is not a mapping
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 102, in retrieve_watchlist
+    data = [{"watchlist": True, **watchlist.listing} for watchlist in watchlists]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 102, in <listcomp>
+    data = [{"watchlist": True, **watchlist.listing} for watchlist in watchlists]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Listing' object is not a mapping
+2023-07-04 15:37:49,797 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:38:11,235 django       ERROR    'Listing' object has no attribute 'dict'
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 102, in retrieve_watchlist
+    data = [{"watchlist": True, **watchlist.listing.dict()} for watchlist in watchlists]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 102, in <listcomp>
+    data = [{"watchlist": True, **watchlist.listing.dict()} for watchlist in watchlists]
+                                  ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Listing' object has no attribute 'dict'
+2023-07-04 15:38:11,238 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:39:23,323 django       ERROR    Object of type ModelState is not JSON serializable
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 192, in _result_to_response
+    return self.api.create_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/main.py", line 416, in create_response
+    content = self.renderer.render(request, data, response_status=status)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/renderers.py", line 25, in render
+    return json.dumps(data, cls=self.encoder_class, **self.json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/responses.py", line 25, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ModelState is not JSON serializable
+2023-07-04 15:39:23,414 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:39:51,008 django       ERROR    Object of type ModelState is not JSON serializable
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 192, in _result_to_response
+    return self.api.create_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/main.py", line 416, in create_response
+    content = self.renderer.render(request, data, response_status=status)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/renderers.py", line 25, in render
+    return json.dumps(data, cls=self.encoder_class, **self.json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/responses.py", line 25, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ModelState is not JSON serializable
+2023-07-04 15:39:51,019 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:40:19,937 django       ERROR    Object of type ModelState is not JSON serializable
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 192, in _result_to_response
+    return self.api.create_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/main.py", line 416, in create_response
+    content = self.renderer.render(request, data, response_status=status)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/renderers.py", line 25, in render
+    return json.dumps(data, cls=self.encoder_class, **self.json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/responses.py", line 25, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ModelState is not JSON serializable
+2023-07-04 15:40:19,946 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:40:47,638 django       ERROR    Object of type ModelState is not JSON serializable
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 192, in _result_to_response
+    return self.api.create_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/main.py", line 416, in create_response
+    content = self.renderer.render(request, data, response_status=status)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/renderers.py", line 25, in render
+    return json.dumps(data, cls=self.encoder_class, **self.json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/responses.py", line 25, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/serializers/json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ModelState is not JSON serializable
+2023-07-04 15:40:47,647 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:44:06,451 django       ERROR    4 validation errors for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  field required (type=value_error.missing)
+response -> data -> 0 -> time_left_seconds
+  field required (type=value_error.missing)
+response -> data -> 0 -> active
+  '>' not supported between instances of 'NoneType' and 'int' (type=type_error)
+response -> data -> 0 -> watchlist
+  object of type 'bool' has no len() (type=type_error)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 4 validation errors for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  field required (type=value_error.missing)
+response -> data -> 0 -> time_left_seconds
+  field required (type=value_error.missing)
+response -> data -> 0 -> active
+  '>' not supported between instances of 'NoneType' and 'int' (type=type_error)
+response -> data -> 0 -> watchlist
+  object of type 'bool' has no len() (type=type_error)
+2023-07-04 15:44:06,476 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:45:07,877 django       ERROR    2 validation errors for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  field required (type=value_error.missing)
+response -> data -> 0 -> watchlist
+  object of type 'bool' has no len() (type=type_error)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 2 validation errors for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  field required (type=value_error.missing)
+response -> data -> 0 -> watchlist
+  object of type 'bool' has no len() (type=type_error)
+2023-07-04 15:45:07,883 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/
+2023-07-04 15:45:57,249 django       ERROR    name 'V' is not defined
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 577, in pydantic.main.BaseModel.from_orm
+  File "pydantic/main.py", line 1076, in pydantic.main.validate_model
+  File "pydantic/fields.py", line 884, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 1101, in pydantic.fields.ModelField._validate_singleton
+  File "pydantic/fields.py", line 1157, in pydantic.fields.ModelField._apply_validators
+  File "pydantic/class_validators.py", line 337, in pydantic.class_validators._generic_validator_basic.lambda13
+  File "pydantic/main.py", line 711, in pydantic.main.BaseModel.validate
+  File "pydantic/main.py", line 339, in pydantic.main.BaseModel.__init__
+  File "pydantic/main.py", line 1076, in pydantic.main.validate_model
+  File "pydantic/fields.py", line 895, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 928, in pydantic.fields.ModelField._validate_sequence_like
+  File "pydantic/fields.py", line 1094, in pydantic.fields.ModelField._validate_singleton
+  File "pydantic/fields.py", line 884, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 1101, in pydantic.fields.ModelField._validate_singleton
+  File "pydantic/fields.py", line 1157, in pydantic.fields.ModelField._apply_validators
+  File "pydantic/class_validators.py", line 337, in pydantic.class_validators._generic_validator_basic.lambda13
+  File "pydantic/main.py", line 713, in pydantic.main.BaseModel.validate
+  File "pydantic/main.py", line 577, in pydantic.main.BaseModel.from_orm
+  File "pydantic/main.py", line 1076, in pydantic.main.validate_model
+  File "pydantic/fields.py", line 867, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 1157, in pydantic.fields.ModelField._apply_validators
+  File "pydantic/class_validators.py", line 304, in pydantic.class_validators._generic_validator_cls.lambda4
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/schemas.py", line 80, in set_watchlist
+    print(type(V))
+               ^
+NameError: name 'V' is not defined
+2023-07-04 15:45:57,256 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 15:47:37,064 django       ERROR    1 validation error for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  field required (type=value_error.missing)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 1 validation error for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  field required (type=value_error.missing)
+2023-07-04 15:47:37,073 django.request ERROR    Internal Server Error: /api/v5/listings/watchlist/

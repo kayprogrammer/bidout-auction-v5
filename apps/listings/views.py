@@ -1,5 +1,7 @@
 from django.db.models import Prefetch, Q
 from ninja.router import Router
+from ninja.responses import Response
+
 from apps.common.exceptions import RequestError
 from apps.common.models import GuestUser
 from apps.common.utils import (
@@ -11,6 +13,8 @@ from .schemas import (
     ListingsResponseSchema,
     ListingResponseSchema,
     ListingDetailDataSchema,
+    AddOrRemoveWatchlistResponseSchema,
+    AddOrRemoveWatchlistSchema,
 )
 from .models import Bid, Category, Listing, WatchList
 from asgiref.sync import sync_to_async
@@ -72,96 +76,89 @@ async def retrieve_listing_detail(request, slug: str):
     return {"message": "Listing details fetched", "data": data}
 
 
-# class ListingsByWatchListView(APIView):
-#     serializer_class = ListingSerializer
-#     permission_classes = (IsGuestOrAuthenticatedCustom,)
+@listings_router.get(
+    "/watchlist/",
+    summary="Retrieve all listings by users watchlist",
+    description="This endpoint retrieves all listings in user's watchlist",
+    auth=[AuthUser(), GuestClient()],
+    response=ListingsResponseSchema,
+)
+async def retrieve_watchlist(request):
+    client = await request.auth
+    watchlists = []
+    if client:
+        watchlists = await sync_to_async(list)(
+            WatchList.objects.filter(
+                Q(user_id=client.id) | Q(guest_id=client.id)
+            ).select_related(
+                "user",
+                "guest",
+                "listing",
+                "listing__auctioneer",
+                "listing__auctioneer__avatar",
+                "listing__category",
+                "listing__image",
+            )
+        )
+    data = [
+        {
+            "auctioneer": watchlist.listing.auctioneer,
+            "watchlist": True,
+            "time_left_seconds": watchlist.listing.time_left_seconds,
+            **watchlist.listing.dict(),
+        }
+        for watchlist in watchlists
+    ]
+    return {"message": "Watchlist Listings fetched", "data": data}
 
-#     @extend_schema(
-#         summary="Retrieve all listings by users watchlist",
-#         description="This endpoint retrieves all listings",
-#     )
-#     async def get(self, request):
-#         client = request.user
-#         watchlists = []
-#         if client:
-#             watchlists = await sync_to_async(list)(
-#                 WatchList.objects.filter(Q(user_id=client.id) | Q(guest_id=client.id))
-#                 .select_related(
-#                     "user",
-#                     "guest",
-#                     "listing",
-#                     "listing__auctioneer",
-#                     "listing__auctioneer__avatar",
-#                     "listing__category",
-#                     "listing__image",
-#                 )
-#                 .prefetch_related(
-#                     Prefetch(
-#                         "listing__watchlists",
-#                         queryset=WatchList.objects.filter(
-#                             Q(user_id=client.id if client else None)
-#                             | Q(guest_id=client.id if client else None)
-#                         ),
-#                         to_attr="watchlist",
-#                     )
-#                 )
-#             )
-#         serializer_data = [
-#             self.serializer_class(watchlist.listing, context={"client": client}).data
-#             for watchlist in watchlists
-#         ]
-#         return CustomResponse.success(
-#             message="Watchlist Listings fetched", data=serializer_data
-#         )
 
-#     @extend_schema(
-#         summary="Add or Remove listing from a users watchlist",
-#         description="""
-#         This endpoint adds or removes a listing from a user's watchlist, authenticated or not....
-#         As a guest, ensure to store guestuser_id in localstorage and keep passing it to header 'guestuserid' in subsequent requests
-#         """,
-#         request=WatchlistCreateSerializer,
-#     )
-#     async def post(self, request):
-#         client = request.user
+@listings_router.post(
+    "/watchlist/",
+    summary="Add or Remove listing from a users watchlist",
+    description="""
+    This endpoint adds or removes a listing from a user's watchlist, authenticated or not....
+    As a guest, ensure to store guestuser_id in localstorage and keep passing it to header 'guestuserid' in subsequent requests
+    """,
+    response={201: AddOrRemoveWatchlistResponseSchema},
+    auth=[AuthUser(), GuestClient()],
+)
+async def post(request, data: AddOrRemoveWatchlistSchema):
+    client = await request.auth
 
-#         serializer = WatchlistCreateSerializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
+    listing = await Listing.objects.get_or_none(slug=data.slug)
+    if not listing:
+        raise RequestError(err_msg="Listing does not exist!", status_code=404)
 
-#         listing = await Listing.objects.get_or_none(
-#             slug=serializer.validated_data["slug"]
-#         )
-#         if not listing:
-#             raise RequestError(err_msg="Listing does not exist!", status_code=404)
+    if not client:
+        client = await GuestUser.objects.acreate()
 
-#         if not client:
-#             client = await GuestUser.objects.acreate()
+    resp_message = "Listing added to user watchlist"
+    status_code = 201
+    if hasattr(client, "email"):
+        watchlist, created = await WatchList.objects.aget_or_create(
+            listing_id=listing.id, user_id=client.id
+        )
+        if not created:
+            await watchlist.adelete()
+            resp_message = "Listing removed from user watchlist"
+            status_code = 200
+    else:
+        watchlist, created = await WatchList.objects.aget_or_create(
+            listing_id=listing.id, guest_id=client.id
+        )
+        if not created:
+            await watchlist.adelete()
+            resp_message = "Listing removed from user watchlist"
+            status_code = 200
 
-#         resp_message = "Listing added to user watchlist"
-#         status_code = 201
-#         if hasattr(client, "email"):
-#             watchlist, created = await WatchList.objects.aget_or_create(
-#                 listing_id=listing.id, user_id=client.id
-#             )
-#             if not created:
-#                 await watchlist.adelete()
-#                 resp_message = "Listing removed from user watchlist"
-#                 status_code = 200
-#         else:
-#             watchlist, created = await WatchList.objects.aget_or_create(
-#                 listing_id=listing.id, guest_id=client.id
-#             )
-#             if not created:
-#                 await watchlist.adelete()
-#                 resp_message = "Listing removed from user watchlist"
-#                 status_code = 200
-
-#         guestuser_id = client.id if isinstance(client, GuestUser) else None
-#         return CustomResponse.success(
-#             message=resp_message,
-#             data={"guestuser_id": guestuser_id},
-#             status_code=status_code,
-#         )
+    guestuser_id = client.id if isinstance(client, GuestUser) else None
+    return Response(
+        {
+            "message": resp_message,
+            "data": {"guestuser_id": guestuser_id},
+        },
+        status=status_code,
+    )
 
 
 # class CategoriesView(APIView):

@@ -77,9 +77,9 @@ class ListingDataSchema(BaseModel):
 
     @validator("watchlist", pre=True)
     def set_watchlist(cls, v):
-        if len(v) > 0:
-            return True
-        return False
+        if isinstance(v, list):
+            return True if len(v) > 0 else False
+        return v
 
     class Config:
         orm_mode = True

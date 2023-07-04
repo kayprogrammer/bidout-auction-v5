@@ -16,6 +16,11 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
+    def dict(self):
+        model_dict = self.__dict__
+        model_dict.pop("_state")
+        return model_dict
+
 
 class File(BaseModel):
     resource_type = models.CharField(max_length=200)
