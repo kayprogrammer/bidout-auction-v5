@@ -319,8 +319,6 @@ class TestAccounts(TestCase):
         response = await self.client.get(
             self.logout_url, content_type=self.content_type, **bearer
         )
-        print(vars(response))
-
         self.assertEqual(response.status_code, 200)
         self.assertEqual(
             response.json(),

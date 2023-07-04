@@ -57,17 +57,6 @@ class Listing(BaseModel):
             return 0
         return self.time_left_seconds
 
-    @property
-    def get_image(self):
-        image = self.image
-        if image:
-            return FileProcessor.generate_file_url(
-                key=self.image_id,
-                folder="listings",
-                content_type=image.resource_type,
-            )
-        return None
-
 
 class Bid(BaseModel):
     user = models.ForeignKey(User, related_name="bids", on_delete=models.CASCADE)

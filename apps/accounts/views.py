@@ -13,7 +13,6 @@ from .schemas import (
     VerifyOtpSchema,
 )
 
-# from apps.common.utils import IsAuthenticatedCustom, is_uuid
 from .auth import Authentication
 from .emails import Util
 

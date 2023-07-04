@@ -938,3 +938,198 @@ RuntimeError: You cannot use AsyncToSync in the same thread as an async event lo
 2023-07-04 11:55:45,729 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
 2023-07-04 11:55:45,736 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
 2023-07-04 11:55:46,926 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-04 12:34:27,956 django.request WARNING  Not Found: //api/v5/listings/
+2023-07-04 12:34:36,475 django       ERROR    'ASGIRequest' object has no attribute 'auth'
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 24, in retrieve_listings
+    client = await request.auth
+                   ^^^^^^^^^^^^
+AttributeError: 'ASGIRequest' object has no attribute 'auth'
+2023-07-04 12:34:36,479 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 12:35:00,982 django       ERROR    name 'client' is not defined
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 32, in retrieve_listings
+    Q(user_id=client.id if client else None)
+                           ^^^^^^
+NameError: name 'client' is not defined
+2023-07-04 12:35:00,985 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 12:35:10,012 django       ERROR    'ASGIRequest' object has no attribute 'auth'
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 24, in retrieve_listings
+    client = await request.auth
+                   ^^^^^^^^^^^^
+AttributeError: 'ASGIRequest' object has no attribute 'auth'
+2023-07-04 12:35:10,022 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 12:35:39,365 django       ERROR    6 validation errors for NinjaResponseSchema
+response -> data -> 0 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 1 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 2 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 3 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 4 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 5 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 6 validation errors for NinjaResponseSchema
+response -> data -> 0 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 1 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 2 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 3 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 4 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 5 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+2023-07-04 12:35:39,390 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 12:36:04,655 django.request WARNING  Unprocessable Entity: /api/v5/listings/
+2023-07-04 12:37:55,778 django       ERROR    6 validation errors for NinjaResponseSchema
+response -> data -> 0 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 1 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 2 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 3 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 4 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 5 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 6 validation errors for NinjaResponseSchema
+response -> data -> 0 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 1 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 2 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 3 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 4 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 5 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+2023-07-04 12:37:55,785 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 12:47:16,826 django       ERROR    'File' object has no attribute 'get_image'
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 577, in pydantic.main.BaseModel.from_orm
+  File "pydantic/main.py", line 1076, in pydantic.main.validate_model
+  File "pydantic/fields.py", line 884, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 1101, in pydantic.fields.ModelField._validate_singleton
+  File "pydantic/fields.py", line 1157, in pydantic.fields.ModelField._apply_validators
+  File "pydantic/class_validators.py", line 337, in pydantic.class_validators._generic_validator_basic.lambda13
+  File "pydantic/main.py", line 711, in pydantic.main.BaseModel.validate
+  File "pydantic/main.py", line 339, in pydantic.main.BaseModel.__init__
+  File "pydantic/main.py", line 1076, in pydantic.main.validate_model
+  File "pydantic/fields.py", line 895, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 928, in pydantic.fields.ModelField._validate_sequence_like
+  File "pydantic/fields.py", line 1094, in pydantic.fields.ModelField._validate_singleton
+  File "pydantic/fields.py", line 884, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 1101, in pydantic.fields.ModelField._validate_singleton
+  File "pydantic/fields.py", line 1157, in pydantic.fields.ModelField._apply_validators
+  File "pydantic/class_validators.py", line 337, in pydantic.class_validators._generic_validator_basic.lambda13
+  File "pydantic/main.py", line 713, in pydantic.main.BaseModel.validate
+  File "pydantic/main.py", line 577, in pydantic.main.BaseModel.from_orm
+  File "pydantic/main.py", line 1076, in pydantic.main.validate_model
+  File "pydantic/fields.py", line 867, in pydantic.fields.ModelField.validate
+  File "pydantic/fields.py", line 1157, in pydantic.fields.ModelField._apply_validators
+  File "pydantic/class_validators.py", line 304, in pydantic.class_validators._generic_validator_cls.lambda4
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/schemas.py", line 76, in assemble_image_url
+    return v.get_image
+           ^^^^^^^^^^^
+AttributeError: 'File' object has no attribute 'get_image'
+2023-07-04 12:47:16,831 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 14:51:37,277 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-04 15:03:09,766 django       ERROR    6 validation errors for NinjaResponseSchema
+response -> data -> 0 -> category
+  str type expected (type=type_error.str)
+response -> data -> 1 -> category
+  str type expected (type=type_error.str)
+response -> data -> 2 -> category
+  str type expected (type=type_error.str)
+response -> data -> 3 -> category
+  str type expected (type=type_error.str)
+response -> data -> 4 -> category
+  str type expected (type=type_error.str)
+response -> data -> 5 -> category
+  str type expected (type=type_error.str)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 6 validation errors for NinjaResponseSchema
+response -> data -> 0 -> category
+  str type expected (type=type_error.str)
+response -> data -> 1 -> category
+  str type expected (type=type_error.str)
+response -> data -> 2 -> category
+  str type expected (type=type_error.str)
+response -> data -> 3 -> category
+  str type expected (type=type_error.str)
+response -> data -> 4 -> category
+  str type expected (type=type_error.str)
+response -> data -> 5 -> category
+  str type expected (type=type_error.str)
+2023-07-04 15:03:09,847 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 15:03:45,222 django       ERROR    name 'CustomResponse' is not defined
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 265, in run
+    result = await self.view_func(request, **values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/listings/views.py", line 71, in retrieve_listing_detail
+    return CustomResponse.success(
+           ^^^^^^^^^^^^^^
+NameError: name 'CustomResponse' is not defined
+2023-07-04 15:03:45,231 django.request ERROR    Internal Server Error: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/
