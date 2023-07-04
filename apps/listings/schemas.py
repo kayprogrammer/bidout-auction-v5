@@ -125,12 +125,6 @@ class CreateBidSchema(BaseModel):
 class BidDataSchema(BaseModel):
     user: dict = Field(..., example={"name": "John Doe", "avatar": "https://image.url"})
     amount: Decimal = Field(..., example=1000.00, decimal_places=2)
-    created_at: datetime
-    updated_at: datetime
-
-    @validator("created_at", "updated_at", pre=True)
-    def assemble_date(cls, v):
-        return v.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
     @validator("user", pre=True)
     def show_user(cls, v):

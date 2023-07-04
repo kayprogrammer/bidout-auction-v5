@@ -1510,3 +1510,149 @@ AttributeError: 'NoneType' object has no attribute 'id'
 2023-07-04 20:44:30,659 django.request WARNING  Bad Request: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
 2023-07-04 20:44:37,218 django.request WARNING  Bad Request: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
 2023-07-04 20:44:56,343 django.request WARNING  Bad Request: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-04 20:51:26,078 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/asgiref/sync.py", line 209, in __call__
+    raise RuntimeError(
+RuntimeError: You cannot use AsyncToSync in the same thread as an async event loop - just await the async function directly.
+2023-07-04 20:57:51,285 django.request WARNING  Not Found: /api/v1/creators
+2023-07-04 20:57:55,312 django.request WARNING  Not Found: /api/v1/creators
+2023-07-04 20:59:26,919 django.request WARNING  Not Found: /api/v1/creators
+2023-07-04 20:59:27,936 django.request WARNING  Not Found: /api/v1/creators
+2023-07-04 21:08:39,234 django.request WARNING  Not Found: /api/v4/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:12:54,578 django.request WARNING  Not Found: /api/v4/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:15:18,370 django.request WARNING  Not Found: /api/v4/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:17:05,947 django.request WARNING  Not Found: /api/v4/listings/watchlist/
+2023-07-04 21:17:37,295 django.request WARNING  Not Found: /api/v4/listings/watchlist/
+2023-07-04 21:19:39,503 django.request WARNING  Not Found: /api/v4/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:20:39,571 django.request WARNING  Not Found: /api/v4/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:22:14,326 django.request WARNING  Not Found: /api/v4/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:23:18,126 django.request WARNING  Unauthorized: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:24:51,137 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 21:24:51,149 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 21:24:51,160 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:13:07,970 django       ERROR    18 validation errors for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 0 -> category
+  str type expected (type=type_error.str)
+response -> data -> 0 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 1 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 1 -> category
+  str type expected (type=type_error.str)
+response -> data -> 1 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 2 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 2 -> category
+  str type expected (type=type_error.str)
+response -> data -> 2 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 3 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 3 -> category
+  str type expected (type=type_error.str)
+response -> data -> 3 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 4 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 4 -> category
+  str type expected (type=type_error.str)
+response -> data -> 4 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 5 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 5 -> category
+  str type expected (type=type_error.str)
+response -> data -> 5 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 266, in run
+    return self._result_to_response(request, result, temporal_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/operation.py", line 202, in _result_to_response
+    result = response_model.from_orm(resp_object).dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/ninja/schema.py", line 164, in from_orm
+    return super().from_orm(obj)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "pydantic/main.py", line 579, in pydantic.main.BaseModel.from_orm
+pydantic.error_wrappers.ValidationError: 18 validation errors for NinjaResponseSchema
+response -> data -> 0 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 0 -> category
+  str type expected (type=type_error.str)
+response -> data -> 0 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 1 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 1 -> category
+  str type expected (type=type_error.str)
+response -> data -> 1 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 2 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 2 -> category
+  str type expected (type=type_error.str)
+response -> data -> 2 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 3 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 3 -> category
+  str type expected (type=type_error.str)
+response -> data -> 3 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 4 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 4 -> category
+  str type expected (type=type_error.str)
+response -> data -> 4 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+response -> data -> 5 -> auctioneer
+  value is not a valid dict (type=type_error.dict)
+response -> data -> 5 -> category
+  str type expected (type=type_error.str)
+response -> data -> 5 -> watchlist
+  value could not be parsed to a boolean (type=type_error.bool)
+2023-07-04 22:13:07,991 django.request ERROR    Internal Server Error: /api/v5/listings/
+2023-07-04 22:16:50,137 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:16:50,152 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:16:50,173 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:18:13,870 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:18:13,880 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:18:13,891 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:18:14,746 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-04 22:21:22,381 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:21:22,391 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:21:22,401 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:21:23,461 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-04 22:21:27,246 django.request WARNING  Not Found: /api/v5/listings/categories/invalid_category_slug/
+2023-07-04 22:22:08,744 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:22:08,760 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:22:08,780 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:22:09,982 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-04 22:22:13,908 django.request WARNING  Not Found: /api/v5/listings/categories/invalid_category_slug/
+2023-07-04 22:22:14,778 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:22:15,903 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_slug/
+2023-07-04 22:23:14,818 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:23:14,828 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:23:14,839 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:23:15,838 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-04 22:23:20,037 django.request WARNING  Not Found: /api/v5/listings/categories/invalid_category_slug/
+2023-07-04 22:23:21,106 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:23:21,947 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_slug/
+2023-07-04 22:24:01,284 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:24:01,298 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:24:01,312 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-04 22:24:02,392 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-04 22:24:06,390 django.request WARNING  Not Found: /api/v5/listings/categories/invalid_category_slug/
+2023-07-04 22:24:07,632 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-04 22:24:08,707 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_slug/

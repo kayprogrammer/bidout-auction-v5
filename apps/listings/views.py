@@ -7,7 +7,6 @@ from apps.common.models import GuestUser
 from apps.common.utils import (
     GuestClient,
     AuthUser,
-    is_int,
 )
 from .schemas import (
     BidResponseSchema,
@@ -158,6 +157,7 @@ async def post(request, data: AddOrRemoveWatchlistSchema):
     guestuser_id = client.id if isinstance(client, GuestUser) else None
     return Response(
         {
+            "status": "success",
             "message": resp_message,
             "data": {"guestuser_id": guestuser_id},
         },

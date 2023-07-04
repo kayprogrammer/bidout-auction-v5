@@ -38,15 +38,6 @@ def is_uuid(value):
         return None
 
 
-def is_int(value):
-    if not value:
-        return None
-    try:
-        return int(value)
-    except:
-        raise RequestError(err_msg="Invalid Quantity params", status_code=422)
-
-
 # Test Utils
 class TestUtil:
     def new_user():
