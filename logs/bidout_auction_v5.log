@@ -614,3 +614,22 @@ django.core.exceptions.ValidationError: ['“jsjsjs” is not a valid UUID.']
 2023-07-03 22:32:53,880 django.request WARNING  Unauthorized: /api/v5/auth/login/
 2023-07-03 22:33:09,766 django.request WARNING  Unauthorized: /api/v5/auth/login/
 2023-07-03 22:33:30,836 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-03 22:44:51,868 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-03 22:47:58,765 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-03 22:57:03,003 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-03 22:59:10,787 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-03 23:11:17,781 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/asgiref/sync.py", line 209, in __call__
+    raise RuntimeError(
+RuntimeError: You cannot use AsyncToSync in the same thread as an async event loop - just await the async function directly.
+2023-07-04 10:31:05,314 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-04 10:33:12,972 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-04 10:33:58,108 django.request WARNING  Bad Request: /api/v5/general/subscribe/
+2023-07-04 10:38:50,242 django.request WARNING  Bad Request: /api/v5/general/subscribe/
