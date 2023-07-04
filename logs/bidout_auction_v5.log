@@ -1503,3 +1503,10 @@ Traceback (most recent call last):
                                        ^^^^^^^^^^^
 AttributeError: 'NoneType' object has no attribute 'id'
 2023-07-04 20:28:46,554 django.request ERROR    Internal Server Error: /api/v5/listings/categories/other/
+2023-07-04 20:42:02,473 django.request WARNING  Unauthorized: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-04 20:42:06,241 django.request WARNING  Unauthorized: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-04 20:42:20,937 django.request WARNING  Unauthorized: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-04 20:43:50,972 django.request WARNING  Forbidden: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-04 20:44:30,659 django.request WARNING  Bad Request: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-04 20:44:37,218 django.request WARNING  Bad Request: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/
+2023-07-04 20:44:56,343 django.request WARNING  Bad Request: /api/v5/listings/detail/iphone-11-pro-max-all-variants-available-for-sale/bids/

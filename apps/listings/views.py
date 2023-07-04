@@ -10,7 +10,10 @@ from apps.common.utils import (
     is_int,
 )
 from .schemas import (
+    BidResponseSchema,
+    BidsResponseSchema,
     CategoriesResponseSchema,
+    CreateBidSchema,
     ListingsResponseSchema,
     ListingResponseSchema,
     ListingDetailDataSchema,
@@ -207,98 +210,84 @@ async def retrieve_category_listings(request, slug: str):
     return {"message": "Category Listings fetched", "data": listings}
 
 
-# class BidsView(APIView):
-#     serializer_class = BidSerializer
+@listings_router.get(
+    "/detail/{slug}/bids/",
+    summary="Retrieve bids in a listing",
+    description="This endpoint retrieves at most 3 bids from a particular listing.",
+    response=BidsResponseSchema,
+)
+async def retrieve_listing_bids(request, slug: str):
+    listing = (
+        await Listing.objects.select_related(
+            "auctioneer", "auctioneer__avatar", "category", "image"
+        )
+        .prefetch_related(
+            Prefetch(
+                "bids",
+                queryset=Bid.objects.select_related("user", "user__avatar"),
+                to_attr="all_bids",
+            )
+        )
+        .get_or_none(slug=slug)
+    )
+    if not listing:
+        raise RequestError(err_msg="Listing does not exist!", status_code=404)
 
-#     @extend_schema(
-#         summary="Retrieve bids in a listing",
-#         description="This endpoint retrieves at most 3 bids from a particular listing.",
-#     )
-#     async def get(self, request, *args, **kwargs):
-#         listing = (
-#             await Listing.objects.select_related(
-#                 "auctioneer", "auctioneer__avatar", "category", "image"
-#             )
-#             .prefetch_related(
-#                 Prefetch(
-#                     "bids",
-#                     queryset=Bid.objects.select_related("user", "user__avatar"),
-#                     to_attr="all_bids",
-#                 )
-#             )
-#             .get_or_none(slug=kwargs.get("slug"))
-#         )
-#         if not listing:
-#             raise RequestError(err_msg="Listing does not exist!", status_code=404)
+    bids = listing.all_bids[:3]
+    return {
+        "message": "Listing Bids fetched",
+        "data": {"listing": listing.name, "bids": bids},
+    }
 
-#         bids = listing.all_bids[:3]
-#         serializer = self.serializer_class({"listing": listing.name, "bids": bids})
-#         return CustomResponse.success(
-#             message="Listing Bids fetched", data=serializer.data
-#         )
 
-#     @extend_schema(
-#         summary="Add a bid to a listing",
-#         description="This endpoint adds a bid to a particular listing.",
-#         request=BidDataSerializer,
-#     )
-#     async def post(self, request, *args, **kwargs):
-#         user = request.user
+@listings_router.post(
+    "/detail/{slug}/bids/",
+    summary="Add a bid to a listing",
+    description="This endpoint adds a bid to a particular listing.",
+    response={201: BidResponseSchema},
+    auth=AuthUser(),
+)
+async def create_bid(request, slug: str, data: CreateBidSchema):
+    user = await request.auth
 
-#         listing = (
-#             await Listing.objects.select_related(
-#                 "auctioneer", "auctioneer__avatar", "category", "image"
-#             )
-#             .prefetch_related("bids")
-#             .get_or_none(slug=kwargs.get("slug"))
-#         )
-#         if not listing:
-#             raise RequestError(err_msg="Listing does not exist!", status_code=404)
+    listing = (
+        await Listing.objects.select_related(
+            "auctioneer", "auctioneer__avatar", "category", "image"
+        )
+        .prefetch_related("bids")
+        .get_or_none(slug=slug)
+    )
+    if not listing:
+        raise RequestError(err_msg="Listing does not exist!", status_code=404)
 
-#         serializer = BidDataSerializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         amount = serializer.validated_data["amount"]
+    amount = data.amount
 
-#         bids_count = listing.bids_count
-#         if user.id == listing.auctioneer_id:
-#             raise RequestError(
-#                 err_msg="You cannot bid your own product!", status_code=403
-#             )
-#         elif not listing.active:
-#             raise RequestError(err_msg="This auction is closed!", status_code=410)
-#         elif listing.time_left < 1:
-#             raise RequestError(
-#                 err_msg="This auction is expired and closed!", status_code=410
-#             )
-#         elif amount < listing.price:
-#             raise RequestError(
-#                 err_msg="Bid amount cannot be less than the bidding price!"
-#             )
-#         elif amount <= listing.highest_bid:
-#             raise RequestError(err_msg="Bid amount must be more than the highest bid!")
+    bids_count = listing.bids_count
+    if user.id == listing.auctioneer_id:
+        raise RequestError(err_msg="You cannot bid your own product!", status_code=403)
+    elif not listing.active:
+        raise RequestError(err_msg="This auction is closed!", status_code=410)
+    elif listing.time_left < 1:
+        raise RequestError(
+            err_msg="This auction is expired and closed!", status_code=410
+        )
+    elif amount < listing.price:
+        raise RequestError(err_msg="Bid amount cannot be less than the bidding price!")
+    elif amount <= listing.highest_bid:
+        raise RequestError(err_msg="Bid amount must be more than the highest bid!")
 
-#         bid = await Bid.objects.select_related("user", "user__avatar").get_or_none(
-#             user_id=user.id, listing_id=listing.id
-#         )
-#         if bid:
-#             # Update existing bid
-#             bid.amount = amount
-#             await bid.asave()
-#         else:
-#             # Create new bid
-#             bids_count += 1
-#             bid = await Bid.objects.acreate(user=user, listing=listing, amount=amount)
-#         listing.bids_count = bids_count
-#         listing.highest_bid = amount
-#         await listing.asave()
-#         serializer = BidDataSerializer(bid)
-#         return CustomResponse.success(
-#             message="Bid added to listing", data=serializer.data, status_code=201
-#         )
-
-#     def get_permissions(self):
-#         if self.request.method == "POST":
-#             return [
-#                 IsAuthenticatedCustom(),
-#             ]
-#         return []
+    bid = await Bid.objects.select_related("user", "user__avatar").get_or_none(
+        user_id=user.id, listing_id=listing.id
+    )
+    if bid:
+        # Update existing bid
+        bid.amount = amount
+        await bid.asave()
+    else:
+        # Create new bid
+        bids_count += 1
+        bid = await Bid.objects.acreate(user=user, listing=listing, amount=amount)
+    listing.bids_count = bids_count
+    listing.highest_bid = amount
+    await listing.asave()
+    return {"message": "Bid added to listing", "data": bid}
