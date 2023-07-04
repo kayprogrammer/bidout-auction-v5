@@ -10,7 +10,7 @@ listing_mappings = [
 
 # names must be unique
 category_mappings = [
-    {"name": "Tecnology", "slug": "technology"},
+    {"name": "Technology", "slug": "technology"},
     {"name": "Accessories", "slug": "accessories"},
     {"name": "Automobile", "slug": "automobile"},
     {"name": "Fashion", "slug": "fashion"},
