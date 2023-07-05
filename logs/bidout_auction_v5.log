@@ -2076,3 +2076,20 @@ AttributeError: 'HttpResponse' object has no attribute 'update'
 2023-07-05 02:31:25,223 django.request WARNING  Unprocessable Entity: /api/v5/listings/watchlist/
 2023-07-05 02:31:53,409 django.request WARNING  Not Found: /api/v5/listings/watchlist/
 2023-07-05 20:55:59,791 django.request WARNING  Method Not Allowed: /api/v5/general/subscribe/
+2023-07-05 22:28:40,960 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:28:54,473 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:28:54,889 django.request WARNING  Not Found: /static/import_export/action_formats.js
+2023-07-05 22:28:55,047 django.request WARNING  Not Found: /static/import_export/action_formats.js
+2023-07-05 22:28:58,645 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:02,484 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:04,329 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:06,259 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:15,538 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:20,045 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:22,833 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:56,709 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:29:58,892 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:30:11,013 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:30:13,321 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:30:18,557 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable
+2023-07-05 22:30:20,342 jazzmin.templatetags.jazzmin WARNING  avatar field must be an ImageField/URLField on the user model, or a callable

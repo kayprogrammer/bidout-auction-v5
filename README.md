@@ -50,9 +50,9 @@ OR
 ```
 
 ## Docs
-#### Live Url: [BidOut Docs](https://bidout-drf-ninja-api.cleverapps.io/) 
+#### Live Url: [BidOut Docs (Not ready yet!)](https://bidout-drf-ninja-api.cleverapps.io/) 
 #### Swagger: [Documentation](https://swagger.io/docs/)
-<!-- #### React Live Url: [BidOut Auction](https://bidout3.netlify.app) 
+<!-- #### React Live Url: [BidOut Auction](https://bidout3.netlify.app)  -->
 
 
 ![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/display1.png?raw=true)
@@ -65,5 +65,9 @@ OR
 
 ![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/display5.png?raw=true)
 
+![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/display6.png?raw=true)
+
+![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/display7.png?raw=true)
+
 ## ADMIN PAGE
-![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/admin.png?raw=true) -->
+![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/admin.png?raw=true)
