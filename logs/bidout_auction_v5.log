@@ -1793,3 +1793,53 @@ response -> data -> bids
 2023-07-05 01:26:10,087 django.request WARNING  Not Found: /dd
 2023-07-05 01:26:24,416 django.request WARNING  Not Found: /dd
 2023-07-05 01:26:24,582 django.request WARNING  Not Found: /favicon.ico
+2023-07-05 01:42:47,050 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 01:42:47,975 django.request WARNING  Not Found: /api/v5/auctioneer/listings/invalid_slug/bids/
+2023-07-05 01:43:47,412 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 01:43:48,621 django.request WARNING  Not Found: /api/v5/auctioneer/listings/invalid_slug/bids/
+2023-07-05 01:43:48,647 django.request WARNING  Bad Request: /api/v5/auctioneer/listings/new-listing/bids/
+2023-07-05 01:43:50,696 django.request WARNING  Not Found: /api/v5/auctioneer/listings/invalid_slug/
+2023-07-05 01:43:50,707 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/new-listing/
+2023-07-05 01:44:18,463 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-05 01:44:19,409 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-05 01:44:19,815 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-05 01:44:21,351 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-05 01:44:22,426 django.request WARNING  Not Found: /api/v5/auth/refresh/
+2023-07-05 01:44:22,435 django.request WARNING  Unauthorized: /api/v5/auth/refresh/
+2023-07-05 01:44:23,878 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-05 01:44:24,921 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-05 01:44:25,793 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-05 01:44:25,800 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-05 01:44:27,415 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-05 01:44:28,621 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 01:44:29,861 django.request WARNING  Not Found: /api/v5/auctioneer/listings/invalid_slug/bids/
+2023-07-05 01:44:29,874 django.request WARNING  Bad Request: /api/v5/auctioneer/listings/new-listing/bids/
+2023-07-05 01:44:31,952 django.request WARNING  Not Found: /api/v5/auctioneer/listings/invalid_slug/
+2023-07-05 01:44:31,962 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/new-listing/
+2023-07-05 01:44:36,823 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-05 01:44:36,832 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-05 01:44:36,842 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-05 01:44:37,813 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-05 01:44:42,206 django.request WARNING  Not Found: /api/v5/listings/categories/invalid_category_slug/
+2023-07-05 01:44:43,263 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-05 01:44:44,237 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_slug/
+2023-07-05 01:45:00,536 django.request WARNING  Not Found: /api/v5/auth/send-password-reset-otp/
+2023-07-05 01:45:01,599 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-05 01:45:02,220 django.request WARNING  Unauthorized: /api/v5/auth/login/
+2023-07-05 01:45:03,755 django.request WARNING  Unauthorized: /api/v5/auth/logout/
+2023-07-05 01:45:04,969 django.request WARNING  Not Found: /api/v5/auth/refresh/
+2023-07-05 01:45:04,976 django.request WARNING  Unauthorized: /api/v5/auth/refresh/
+2023-07-05 01:45:06,515 django.request WARNING  Unprocessable Entity: /api/v5/auth/register/
+2023-07-05 01:45:07,546 django.request WARNING  Not Found: /api/v5/auth/resend-verification-email/
+2023-07-05 01:45:08,601 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-05 01:45:08,610 django.request WARNING  Not Found: /api/v5/auth/set-new-password/
+2023-07-05 01:45:10,015 django.request WARNING  Not Found: /api/v5/auth/verify-email/
+2023-07-05 01:45:11,048 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/
+2023-07-05 01:45:12,400 django.request WARNING  Not Found: /api/v5/auctioneer/listings/invalid_slug/bids/
+2023-07-05 01:45:12,423 django.request WARNING  Bad Request: /api/v5/auctioneer/listings/new-listing/bids/
+2023-07-05 01:45:14,956 django.request WARNING  Not Found: /api/v5/auctioneer/listings/invalid_slug/
+2023-07-05 01:45:14,969 django.request WARNING  Unprocessable Entity: /api/v5/auctioneer/listings/new-listing/
+2023-07-05 01:45:19,988 django.request WARNING  Not Found: /api/v5/listings/detail/invalid_category_slug/bids/
+2023-07-05 01:45:20,001 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
+2023-07-05 01:45:20,013 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
+2023-07-05 01:45:21,271 django.request WARNING  Not Found: /api/v5/listings/watchlist/
