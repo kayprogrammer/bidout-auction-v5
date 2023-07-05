@@ -125,7 +125,7 @@ async def retrieve_watchlist(request):
     response={201: AddOrRemoveWatchlistResponseSchema},
     auth=[AuthUser(), GuestClient()],
 )
-async def post(request, data: AddOrRemoveWatchlistSchema):
+async def add_or_remove_watchlist_listings(request, data: AddOrRemoveWatchlistSchema):
     client = await request.auth
 
     listing = await Listing.objects.get_or_none(slug=data.slug)

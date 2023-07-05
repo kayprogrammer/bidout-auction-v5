@@ -1843,3 +1843,236 @@ response -> data -> bids
 2023-07-05 01:45:20,001 django.request WARNING  Forbidden: /api/v5/listings/detail/new-listing/bids/
 2023-07-05 01:45:20,013 django.request WARNING  Bad Request: /api/v5/listings/detail/new-listing/bids/
 2023-07-05 01:45:21,271 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-05 02:11:27,785 django.request WARNING  Not Found: /api/v4/general/reviews/
+2023-07-05 02:11:27,818 django.request WARNING  Not Found: /api/v4/listings/
+2023-07-05 02:11:27,849 django.request WARNING  Not Found: /api/v4/general/site-detail/
+2023-07-05 02:11:28,015 django.request WARNING  Not Found: /api/v4/general/site-detail/
+2023-07-05 02:11:28,208 django.request WARNING  Not Found: /api/v4/general/reviews/
+2023-07-05 02:11:28,227 django.request WARNING  Not Found: /api/v4/listings/
+2023-07-05 02:11:59,074 django.request WARNING  Not Found: /api/v4/auth/logout/
+2023-07-05 02:12:01,862 django.request WARNING  Not Found: /api/v4/general/reviews/
+2023-07-05 02:12:01,906 django.request WARNING  Not Found: /api/v4/listings/
+2023-07-05 02:16:24,979 django.request WARNING  Method Not Allowed: /api/v5/listings/watchlist/
+2023-07-05 02:19:56,903 django.request WARNING  Method Not Allowed: /api/v5/listings/watchlist/
+2023-07-05 02:22:09,240 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.extend(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'extend'
+2023-07-05 02:22:09,253 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.extend(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'extend'
+2023-07-05 02:22:09,256 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.extend(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'extend'
+2023-07-05 02:22:09,544 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.extend(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'extend'
+2023-07-05 02:22:09,895 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.extend(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'extend'
+2023-07-05 02:22:09,924 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.extend(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'extend'
+2023-07-05 02:22:22,387 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.extend(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'extend'
+2023-07-05 02:22:22,389 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.extend(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'extend'
+2023-07-05 02:22:22,402 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.extend(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'extend'
+2023-07-05 02:22:22,620 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.extend(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'extend'
+2023-07-05 02:22:22,989 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.extend(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'extend'
+2023-07-05 02:22:23,016 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.extend(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'extend'
+2023-07-05 02:22:52,586 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.update(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'update'
+2023-07-05 02:22:52,599 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.update(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'update'
+2023-07-05 02:22:52,608 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.update(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'update'
+2023-07-05 02:22:52,927 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.update(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'update'
+2023-07-05 02:22:53,131 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.update(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'update'
+2023-07-05 02:22:53,179 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.headers.update(headers)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ResponseHeaders' object has no attribute 'update'
+2023-07-05 02:23:02,945 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.update(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'update'
+2023-07-05 02:23:02,973 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.update(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'update'
+2023-07-05 02:23:02,989 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.update(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'update'
+2023-07-05 02:23:03,290 django.request ERROR    Internal Server Error: /api/v5/general/site-detail/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.update(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'update'
+2023-07-05 02:23:03,524 django.request ERROR    Internal Server Error: /api/v5/general/reviews/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.update(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'update'
+2023-07-05 02:23:03,548 django.request ERROR    Internal Server Error: /api/v5/listings/
+Traceback (most recent call last):
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/apps/common/middlewares.py", line 23, in __call__
+    response.update(headers)
+    ^^^^^^^^^^^^^^^
+AttributeError: 'HttpResponse' object has no attribute 'update'
+2023-07-05 02:24:26,430 django.request WARNING  Method Not Allowed: /api/v5/listings/watchlist/
+2023-07-05 02:25:18,350 django.request WARNING  Method Not Allowed: /api/v5/listings/watchlist/
+2023-07-05 02:27:04,233 django.request WARNING  Method Not Allowed: /api/v5/listings/watchlist/
+2023-07-05 02:31:25,223 django.request WARNING  Unprocessable Entity: /api/v5/listings/watchlist/
+2023-07-05 02:31:53,409 django.request WARNING  Not Found: /api/v5/listings/watchlist/
+2023-07-05 20:55:59,791 django.request WARNING  Method Not Allowed: /api/v5/general/subscribe/
