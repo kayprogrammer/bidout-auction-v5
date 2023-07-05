@@ -1760,3 +1760,36 @@ response -> data -> bids
 2023-07-05 00:45:47,176 django.request WARNING  Not Found: /sd
 2023-07-05 00:45:47,361 django.request WARNING  Not Found: /favicon.ico
 2023-07-05 00:45:57,622 django.request WARNING  Not Found: /api/v5/dfgh
+2023-07-05 00:50:14,074 django.request WARNING  Not Found: /api/v5/dfgh
+2023-07-05 00:56:25,321 django.request WARNING  Not Found: /dd
+2023-07-05 01:03:17,843 django.request WARNING  Not Found: /dd
+2023-07-05 01:03:17,937 django.request WARNING  Not Found: /favicon.ico
+2023-07-05 01:05:13,652 django.request WARNING  Not Found: /dd
+2023-07-05 01:08:18,329 django.request WARNING  Not Found: /dd
+2023-07-05 01:08:18,423 django.request WARNING  Not Found: /favicon.ico
+2023-07-05 01:17:49,286 django.request WARNING  Not Found: /dd
+2023-07-05 01:17:50,236 django.request WARNING  Not Found: /dd
+2023-07-05 01:17:50,746 django.request WARNING  Not Found: /dd
+2023-07-05 01:19:07,381 django.request WARNING  Not Found: /dd
+2023-07-05 01:20:40,861 django.request WARNING  Not Found: /dd
+2023-07-05 01:20:53,281 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-05 01:20:54,977 django.request WARNING  Not Found: /dd
+2023-07-05 01:20:57,594 django.request WARNING  Not Found: /dd
+2023-07-05 01:20:58,128 django.request WARNING  Not Found: /dd
+2023-07-05 01:20:58,520 django.request WARNING  Not Found: /dd
+2023-07-05 01:20:58,864 django.request WARNING  Not Found: /dd
+2023-07-05 01:21:28,748 django.utils.autoreload INFO     /home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/bidout_auction_v5/settings/base.py changed, reloading.
+2023-07-05 01:21:29,963 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-05 01:21:34,264 django.utils.autoreload INFO     /home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/bidout_auction_v5/settings/base.py changed, reloading.
+2023-07-05 01:21:35,243 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-05 01:22:58,053 django.utils.autoreload INFO     /home/kayprogrammer/Documents/Projects/Django/bidout-auction-v5/bidout_auction_v5/settings/base.py changed, reloading.
+2023-07-05 01:22:59,100 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2023-07-05 01:23:10,625 django.request WARNING  Not Found: /dd
+2023-07-05 01:23:33,587 django.request WARNING  Not Found: /dd
+2023-07-05 01:26:01,897 django.request WARNING  Not Found: /dd
+2023-07-05 01:26:02,043 django.request WARNING  Not Found: /favicon.ico
+2023-07-05 01:26:07,889 django.request WARNING  Not Found: /dd
+2023-07-05 01:26:09,142 django.request WARNING  Not Found: /dd
+2023-07-05 01:26:10,087 django.request WARNING  Not Found: /dd
+2023-07-05 01:26:24,416 django.request WARNING  Not Found: /dd
+2023-07-05 01:26:24,582 django.request WARNING  Not Found: /favicon.ico

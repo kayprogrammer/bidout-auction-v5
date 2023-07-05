@@ -21,6 +21,16 @@ api.add_router("/api/v5/listings/", listings_router)
 api.add_router("/api/v5/auctioneer/", auctioneer_router)
 
 
+@api.get(
+    "/api/v5/healthcheck/",
+    summary="API Health Check",
+    description="This endpoint checks the health of the API",
+    tags=["HealthCheck"],
+)
+async def get(request):
+    return {"message": "pong"}
+
+
 @api.exception_handler(ValidationError)
 def validation_exc_handler(request, exc):
     return validation_errors(exc)
