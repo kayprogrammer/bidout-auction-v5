@@ -114,7 +114,7 @@ async def create_listing(request, data: CreateListingSchema):
     }
 
 
-@auctioneer_router.put(
+@auctioneer_router.patch(
     "/listings/{slug}/",
     summary="Update a listing",
     description="This endpoint update a particular listing. Do note that only file type is optional.",
