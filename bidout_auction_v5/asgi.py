@@ -7,7 +7,9 @@ For more information on this file, see
 https://docs.djangoproject.com/en/4.2/howto/deployment/asgi/
 """
 
-import os
+import os, sys
+if os.environ.get('SETTINGS') == 'production':
+    sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from django.core.asgi import get_asgi_application
 from decouple import config
@@ -18,3 +20,4 @@ os.environ.setdefault(
 )
 
 application = get_asgi_application()
+app = application

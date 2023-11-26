@@ -36,6 +36,7 @@ SITE_ID = 1
 THIRD_PARTY_APPS = [
     "corsheaders",
     "cloudinary",
+    "whitenoise.runserver_nostatic",
 ]
 
 LOCAL_APPS = [
@@ -139,6 +140,7 @@ MEDIA_URL = "/media/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static/"),
 ]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "static/media")
 
@@ -162,49 +164,49 @@ INTERNAL_IPS = [
 SITE_NAME = config("SITE_NAME")
 FRONTEND_URL = config("FRONTEND_URL")
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
-LOG_LEVEL = "INFO"
+# LOG_LEVEL = "INFO"
 
-logging.config.dictConfig(
-    {
-        "version": 1,
-        "disable_existing_loggers": False,
-        "formatters": {
-            "console": {
-                "format": "%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
-            },
-            "file": {"format": "%(asctime)s %(name)-12s %(levelname)-8s %(message)s"},
-            "django.server": DEFAULT_LOGGING["formatters"]["django.server"],
-        },
-        "handlers": {
-            "console": {
-                "class": "logging.StreamHandler",
-                "formatter": "console",
-            },
-            "file": {
-                "level": "INFO",
-                "class": "logging.FileHandler",
-                "formatter": "file",
-                "filename": "logs/bidout_auction_v5.log",
-            },
-            "django.server": DEFAULT_LOGGING["handlers"]["django.server"],
-        },
-        "loggers": {
-            "": {
-                "level": "INFO",
-                "handlers": ["console", "file"],
-                "propagate": False,
-            },
-            "apps": {
-                "level": "INFO",
-                "handlers": ["console"],
-                "propagate": False,
-            },
-            "django.server": DEFAULT_LOGGING["loggers"]["django.server"],
-        },
-    }
-)
+# logging.config.dictConfig(
+#     {
+#         "version": 1,
+#         "disable_existing_loggers": False,
+#         "formatters": {
+#             "console": {
+#                 "format": "%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
+#             },
+#             "file": {"format": "%(asctime)s %(name)-12s %(levelname)-8s %(message)s"},
+#             "django.server": DEFAULT_LOGGING["formatters"]["django.server"],
+#         },
+#         "handlers": {
+#             "console": {
+#                 "class": "logging.StreamHandler",
+#                 "formatter": "console",
+#             },
+#             "file": {
+#                 "level": "INFO",
+#                 "class": "logging.FileHandler",
+#                 "formatter": "file",
+#                 "filename": "logs/bidout_auction_v5.log",
+#             },
+#             "django.server": DEFAULT_LOGGING["handlers"]["django.server"],
+#         },
+#         "loggers": {
+#             "": {
+#                 "level": "INFO",
+#                 "handlers": ["console", "file"],
+#                 "propagate": False,
+#             },
+#             "apps": {
+#                 "level": "INFO",
+#                 "handlers": ["console"],
+#                 "propagate": False,
+#             },
+#             "django.server": DEFAULT_LOGGING["loggers"]["django.server"],
+#         },
+#     }
+# )
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
