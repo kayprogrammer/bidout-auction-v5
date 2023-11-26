@@ -1,4 +1,4 @@
-# BidOut Auction V5 (WORK IN PROGRESS)
+# BidOut Auction V5
 
 ![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/ninja.png?raw=true)
 
@@ -50,7 +50,7 @@ OR
 ```
 
 ## Docs
-#### API Url: [BidOut Docs](http://127.0.0.1:8000/) 
+#### API Url: [BidOut Docs](https://bidout-dnrf-api.vercel.app/) 
 #### Swagger: [Documentation](https://swagger.io/docs/)
 
 ![alt text](https://github.com/kayprogrammer/bidout-auction-v5/blob/main/display/display1.png?raw=true)
